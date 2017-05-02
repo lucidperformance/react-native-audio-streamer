@@ -72,6 +72,10 @@ RCT_EXPORT_METHOD(seekToTime: (double)time) {
    if(_player) [_player setCurrentTime:time];
 }
 
+RCT_EXPORT_METHOD(setVolume: (double)volume) {
+    if(_player) [_player setVolume:volume];
+}
+
 RCT_EXPORT_METHOD(duration:(RCTResponseSenderBlock)callback){
     callback(@[[NSNull null], @(_player && _player.duration && _player.duration > 0 ? _player.duration : 0)]);
 }
