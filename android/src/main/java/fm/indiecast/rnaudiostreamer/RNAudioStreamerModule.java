@@ -40,7 +40,6 @@ public class RNAudioStreamerModule extends ReactContextBaseJavaModule implements
     private SimpleExoPlayer player = null;
     private String status = "STOPPED";
     private ReactApplicationContext reactContext = null;
-    private int volume = null;
 
     public RNAudioStreamerModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -83,8 +82,6 @@ public class RNAudioStreamerModule extends ReactContextBaseJavaModule implements
         // Start preparing audio
         player.prepare(audioSource);
         player.addListener(this);
-
-        this.volume = player.getVolume()
     }
 
     @ReactMethod public void play() {
@@ -104,7 +101,7 @@ public class RNAudioStreamerModule extends ReactContextBaseJavaModule implements
       if (volume == 0.0) {
         player.setVolume(0f);
       } else {
-        player.setVolume(this.volume);
+        player.setVolume(1f);
       }
     }
 
