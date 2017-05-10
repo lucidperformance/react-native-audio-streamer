@@ -109,7 +109,7 @@ public class RNAudioStreamerModule extends ReactContextBaseJavaModule implements
         if (player == null){
             callback.invoke(null,(double)0);
         }else{
-            callback.invoke(null,(double)(player.getCurrentPosition()/1000));
+            callback.invoke(null,(double)(player.getCurrentPosition()/1000.0));
         }
     }
 
